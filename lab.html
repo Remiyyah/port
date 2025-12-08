@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Laboratory | Portfolio</title>
+    <meta name="theme-color" content="#00ff88">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/lab.css">
+    
+    
+</head>
+<body>
+    <div class="container">
+        <header class="lab-header">
+            <h1 class="lab-title">Creative Foundry</h1>
+            <p class="lab-subtitle">Experiments in code, UI design, & AI technology</p>
+            
+            <div class="lab-status">
+                <span class="status-dot active"></span>
+                <span class="status-text">Currently experimenting with: Cloud + AI Integration</span>
+            </div>
+        </header>
+
+        <div class="lab-stats">
+            <div class="stat-item">
+                <div class="stat-number" id="experiment-count">0</div>
+                <div class="stat-label">Total Experiments</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="active-count">0</div>
+                <div class="stat-label">In Progress</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="lines-of-code">42K</div>
+                <div class="stat-label">Lines of Code</div>
+            </div>
+        </div>
+
+        <div class="lab-controls">
+            <button class="control-btn active" data-filter="all">All Experiments</button>
+            <button class="control-btn" data-filter="code">Code</button>
+            <button class="control-btn" data-filter="design">Design</button>
+            <button class="control-btn" data-filter="interactive">Interactive</button>
+            <button class="control-btn" data-filter="ai">AI/ML</button>
+            <div class="search-tube">
+                <input type="text" placeholder="🔍 Search experiments..." class="search-input" id="searchInput">
+            </div>
+        </div>
+
+        <div class="experiments-grid" id="experimentsGrid">
+            
+            <article class="experiment-card" data-category="code interactive ai" data-status="active">
+                <div class="experiment-header"><span class="experiment-badge active">Active</span><span class="experiment-date">2024</span></div>
+                <h3 class="experiment-title">Neural Network Visualizer</h3>
+                <p class="experiment-description">Real-time visualization of neural network decision boundaries using Three.js and TensorFlow.js</p>
+                <div class="experiment-tech"><span class="tech-tag">TensorFlow.js</span><span class="tech-tag">Three.js</span><span class="tech-tag">React</span></div>
+            </article>
+
+            <article class="experiment-card" data-category="design" data-status="completed">
+                <div class="experiment-header"><span class="experiment-badge completed">Completed</span><span class="experiment-date">2023</span></div>
+                <h3 class="experiment-title">Generative Typography</h3>
+                <p class="experiment-description">Algorithmic letterforms generated using cellular automata and p5.js</p>
+                <div class="experiment-tech"><span class="tech-tag">p5.js</span><span class="tech-tag">SVG</span><span class="tech-tag">Processing</span></div>
+            </article>
+
+            <article class="experiment-card" data-category="code interactive" data-status="active">
+                <div class="experiment-header"><span class="experiment-badge active">Active</span><span class="experiment-date">2024</span></div>
+                <h3 class="experiment-title">Audio Visualizer</h3>
+                <p class="experiment-description">Real-time audio visualization using WebAudio API and particle systems</p>
+                <div class="experiment-tech"><span class="tech-tag">WebAudio API</span><span class="tech-tag">Canvas</span><span class="tech-tag">JavaScript</span></div>
+            </article>
+
+            <article class="experiment-card" data-category="ai code" data-status="completed">
+                <div class="experiment-header"><span class="experiment-badge completed">Completed</span><span class="experiment-date">2023</span></div>
+                <h3 class="experiment-title">GPT-3 Interface</h3>
+                <p class="experiment-description">Custom interface for OpenAI's GPT-3 with real-time streaming responses</p>
+                <div class="experiment-tech"><span class="tech-tag">OpenAI API</span><span class="tech-tag">Node.js</span><span class="tech-tag">React</span></div>
+            </article>
+
+            <article class="experiment-card" data-category="design interactive" data-status="active">
+                <div class="experiment-header"><span class="experiment-badge active">Active</span><span class="experiment-date">2024</span></div>
+                <h3 class="experiment-title">3D Portfolio Scene</h3>
+                <p class="experiment-description">Interactive 3D portfolio environment built with Three.js and Blender</p>
+                <div class="experiment-tech"><span class="tech-tag">Three.js</span><span class="tech-tag">Blender</span><span class="tech-tag">GLSL</span></div>
+            </article>
+
+            <article class="experiment-card" data-category="code" data-status="completed">
+                <div class="experiment-header"><span class="experiment-badge completed">Completed</span><span class="experiment-date">2023</span></div>
+                <h3 class="experiment-title">WebGL Shader Pack</h3>
+                <p class="experiment-description">Collection of custom GLSL shaders for real-time graphics effects</p>
+                <div class="experiment-tech"><span class="tech-tag">GLSL</span><span class="tech-tag">WebGL</span><span class="tech-tag">Shaders</span></div>
+            </article>
+
+            <article class="experiment-card" data-category="code ai" data-status="active">
+                <div class="experiment-header"><span class="experiment-badge active">Active</span><span class="experiment-date">2024</span></div>
+                <h3 class="experiment-title">Project 7: Cloud AI</h3>
+                <p class="experiment-description">Serverless architecture for deploying machine learning models.</p>
+                <div class="experiment-tech"><span class="tech-tag">AWS</span><span class="tech-tag">Python</span><span class="tech-tag">Docker</span></div>
+            </article>
+
+            <article class="experiment-card" data-category="design" data-status="completed">
+                <div class="experiment-header"><span class="experiment-badge completed">Completed</span><span class="experiment-date">2024</span></div>
+                <h3 class="experiment-title">Project 8: UI Kit</h3>
+                <p class="experiment-description">A comprehensive Figma UI kit for dashboard applications.</p>
+                <div class="experiment-tech"><span class="tech-tag">Figma</span><span class="tech-tag">Design System</span></div>
+            </article>
+
+             <article class="experiment-card" data-category="interactive" data-status="active">
+                <div class="experiment-header"><span class="experiment-badge active">Active</span><span class="experiment-date">2024</span></div>
+                <h3 class="experiment-title">Project 9: VR Experience</h3>
+                <p class="experiment-description">WebXR based virtual gallery walk-through.</p>
+                <div class="experiment-tech"><span class="tech-tag">WebXR</span><span class="tech-tag">A-Frame</span></div>
+            </article>
+
+             <article class="experiment-card" data-category="code" data-status="completed">
+                <div class="experiment-header"><span class="experiment-badge completed">Completed</span><span class="experiment-date">2023</span></div>
+                <h3 class="experiment-title">Project 10: Rust API</h3>
+                <p class="experiment-description">High-performance backend API written in Rust.</p>
+                <div class="experiment-tech"><span class="tech-tag">Rust</span><span class="tech-tag">Actix</span></div>
+            </article>
+
+             <article class="experiment-card" data-category="ai" data-status="active">
+                <div class="experiment-header"><span class="experiment-badge active">Active</span><span class="experiment-date">2024</span></div>
+                <h3 class="experiment-title">Project 11: Vision Bot</h3>
+                <p class="experiment-description">Computer vision bot for detecting objects in video streams.</p>
+                <div class="experiment-tech"><span class="tech-tag">OpenCV</span><span class="tech-tag">Python</span></div>
+            </article>
+
+             <article class="experiment-card" data-category="design" data-status="completed">
+                <div class="experiment-header"><span class="experiment-badge completed">Completed</span><span class="experiment-date">2024</span></div>
+                <h3 class="experiment-title">Project 12: Branding</h3>
+                <p class="experiment-description">Corporate identity package for a fintech startup.</p>
+                <div class="experiment-tech"><span class="tech-tag">Illustrator</span><span class="tech-tag">Brand</span></div>
+            </article>
+
+            <article class="experiment-card" data-category="code interactive" data-status="active">
+                <div class="experiment-header"><span class="experiment-badge active">Active</span><span class="experiment-date">2025</span></div>
+                <h3 class="experiment-title">Project 13: Game Engine</h3>
+                <p class="experiment-description">Custom 2D Game Engine built from scratch using C++.</p>
+                <div class="experiment-tech"><span class="tech-tag">C++</span><span class="tech-tag">OpenGL</span></div>
+            </article>
+
+             <article class="experiment-card" data-category="code" data-status="active">
+                <div class="experiment-header"><span class="experiment-badge active">Active</span><span class="experiment-date">2025</span></div>
+                <h3 class="experiment-title">Project 14: Mobile App</h3>
+                <p class="experiment-description">React Native application for fitness tracking.</p>
+                <div class="experiment-tech"><span class="tech-tag">React Native</span><span class="tech-tag">Firebase</span></div>
+            </article>
+
+        </div>
+
+        <div class="pagination-container">
+            <button id="prevPageBtn" class="pagination-btn" disabled>
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <span id="pageIndicator">Page 1 of 1</span>
+            <button id="nextPageBtn" class="pagination-btn">
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <section class="active-experiment">
+            <h2 class="section-title">⚗️ Currently Brewing</h2>
+            <div class="experiment-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">experiment_console.js</span>
+                </div>
+                <div class="terminal-content" id="terminalContent">
+                    <p class="terminal-line"><span class="prompt">$</span> npm run experiment</p>
+                    <p class="terminal-line">> Starting creative coding session...</p>
+                    <p class="terminal-line">> Loading Three.js + Tone.js modules</p>
+                    <p class="terminal-line">> Initializing WebAudio API</p>
+                    <p class="terminal-line blinking" id="blinkingLine">> Awaiting creative input_</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="featured-experiment">
+            <div class="experiment-visual">
+                <canvas id="experiment-canvas"></canvas>
+            </div>
+            <div class="experiment-details">
+                <h3>Featured Experiment</h3>
+                <h2>Audio Visualizer Symphony</h2>
+                <p>Real-time audio visualization using WebAudio API and particle systems. This experiment transforms audio input into dynamic visual patterns using FFT analysis and particle physics.</p>
+                <button class="play-btn" id="playDemoBtn">▶ Play Demo</button>
+            </div>
+        </div>
+
+        <section class="ai-demo-section" id="ai-demo">
+            <div class="demo-header">
+                <h1 class="demo-title">
+                    <i class="fas fa-robot"></i>
+                    MedConceptsQA: AI Medical Q&A System
+                    <i class="fas fa-stethoscope"></i>
+                </h1>
+                <p class="demo-subtitle">
+                    A research-focused AI system evaluating LLaMA's medical question-answering capabilities. 
+                    This study analyzed 25 complex medical concepts through structured evaluation.
+                </p>
+            </div>
+
+            <div class="demo-container">
+                <div class="demo-controls">
+                    <button class="run-demo-btn" id="runAiDemoBtn">
+                        <i class="fas fa-play"></i>
+                        Run Medical QA Evaluation
+                    </button>
+                </div>
+
+                <div class="results-header" id="resultsHeader" style="display: none;">
+                    <div>
+                        <span class="badge bg-success" style="background: #28a745!important;">Correct: <span id="correctCount">0</span></span>
+                        <span class="badge bg-danger ms-2" style="background: #dc3545!important;">Incorrect: <span id="incorrectCount">0</span></span>
+                    </div>
+                    <div class="accuracy-display">
+                        Accuracy: <span id="accuracyValue">0.00</span>%
+                    </div>
+                </div>
+
+                <div class="results-grid" id="resultsGrid">
+                    </div>
+
+                <div class="demo-footer">
+                    <div class="demo-stats">
+                        <div class="demo-stat">
+                            <div class="demo-stat-number">25</div>
+                            <div class="demo-stat-label">Medical Questions</div>
+                        </div>
+                        <div class="demo-stat">
+                            <div class="demo-stat-number">82.4%</div>
+                            <div class="demo-stat-label">Average Accuracy</div>
+                        </div>
+                        <div class="demo-stat">
+                            <div class="demo-stat-number">LLaMA3.3-70B</div>
+                            <div class="demo-stat-label">Model Used</div>
+                        </div>
+                    </div>
+                    <p class="mt-3">Research Study: Evaluating LLM Performance on Medical Concept Understanding</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="uni-search-demo" id="uni-search">
+            <div class="uni-header">
+                <div class="uni-logo">
+                    <div class="uni-logo-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="uni-logo-text">
+                        <h2>The University of Memphis</h2>
+                        <p>INTENSIVE ENGLISH FOR INTERNATIONALS (IEI)</p>
+                    </div>
+                </div>
+                <div class="menu-icon">
+                    <i class="fas fa-bars"></i>
+                    <p style="color: white;">Menu</p>
+                </div>
+            </div>
+
+            <nav class="uni-navbar">
+                <ul class="uni-nav-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Future Students</a></li>
+                    <li><a href="#">English Conditional Admission</a></li>
+                    <li><a href="#">SPEAK Test</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Apply Now!</a></li>
+                    <li><a href="#">Au Pair</a></li>
+                    <li><a href="#">Summer Program</a></li>
+                </ul>
+            </nav>
+
+            <div class="uni-content">
+                <aside class="uni-sidebar">
+                    <div class="sidebar-title">Explore IEI</div>
+                    <ul class="sidebar-links">
+                        <li><a href="#">About IEI</a></li>
+                        <li><a href="#">Curriculum</a></li>
+                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">Session Dates</a></li>
+                        <li><a href="#">Fees</a></li>
+                        <li><a href="#">Housing</a></li>
+                        <li><a href="#">Faculty and Staff</a></li>
+                        <li><a href="#">Au Pair</a></li>
+                    </ul>
+                </aside>
+
+                <div class="uni-main">
+                    <h2 class="uni-page-title">IEI Search Engine</h2>
+                    <p style="color: var(--um-dark); margin-bottom: 1.5rem;">Find the best matching resource from your prompt.</p>
+                    
+                    <div class="uni-search-box">
+                        <input type="text" id="uniSearchInput" placeholder="Type your prompt here..." value="How to apply for international students?">
+                        <button id="uniSearchBtn">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+
+                    <div class="search-examples">
+                        <button class="example-btn" data-query="Tuition fees for international students">Tuition fees</button>
+                        <button class="example-btn" data-query="Housing options on campus">Housing options</button>
+                        <button class="example-btn" data-query="English language requirements">Language requirements</button>
+                        <button class="example-btn" data-query="Visa application process">Visa process</button>
+                    </div>
+
+                    <div class="uni-card" id="searchResults" style="display: none;">
+                        <h3 id="searchPrompt">Results for: "How to apply for international students?"</h3>
+                        <p class="results-count" id="resultsCount">0 results found</p>
+                        <div id="resultsContainer">
+                            </div>
+                    </div>
+
+                    <div class="history-card">
+                        <h3 style="color: var(--um-blue);">Recent Searches</h3>
+                        <ul class="history-list" id="searchHistory">
+                            <li><i class="fas fa-history"></i> IELTS requirements for admission</li>
+                            <li><i class="fas fa-history"></i> International student scholarships</li>
+                            <li><i class="fas fa-history"></i> Campus facilities for students</li>
+                            <li><i class="fas fa-history"></i> Intensive English program schedule</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="uni-footer">
+                <p>&copy; 2025 University of Memphis. All rights reserved.</p>
+                <p><a href="#">Privacy Policy</a> | <a href="#">Accessibility</a> | <a href="#">Contact Us</a></p>
+            </footer>
+
+            <div class="demo-description">
+                <h3><i class="fas fa-search"></i> About This Project</h3>
+                <p>
+                    Developed for the University of Memphis's Intensive English for Internationals (IEI) program, 
+                    this AI-powered search engine helps international students find relevant resources using natural language queries. 
+                    The system uses semantic search and NLP to match user prompts with the most relevant documents from the university's database.
+                </p>
+                <p><strong>Technologies:</strong> Python, Flask, BERT-Uncased, FAISS Vector Database, HTML/CSS/JavaScript</p>
+            </div>
+        </section>
+
+        <footer class="lab-footer">
+            <p>Creative Foundry • Continuously experimenting since 2023</p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Made with ❤️ and excessive amounts of <del>adderall</del>
+                coffee</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ==========================================
+            // PAGINATION & FILTER SYSTEM (NEW CODE)
+            // ==========================================
+            const ITEMS_PER_PAGE = 6;
+            let currentPage = 1;
+            let currentFilteredCards = []; 
+
+            // DOM Elements
+            const allCards = Array.from(document.querySelectorAll('.experiment-card'));
+            const grid = document.getElementById('experimentsGrid');
+            const prevBtn = document.getElementById('prevPageBtn');
+            const nextBtn = document.getElementById('nextPageBtn');
+            const pageIndicator = document.getElementById('pageIndicator');
+            
+            // 1. Master Filter Function
+            function applyFilters() {
+                const activeBtn = document.querySelector('.control-btn.active');
+                const activeCategory = activeBtn ? activeBtn.dataset.filter : 'all';
+                const searchInputVal = document.getElementById('searchInput').value.toLowerCase();
+
+                // Filter the master list of cards
+                currentFilteredCards = allCards.filter(card => {
+                    const categories = card.dataset.category.split(' ');
+                    const title = card.querySelector('.experiment-title').textContent.toLowerCase();
+                    const desc = card.querySelector('.experiment-description').textContent.toLowerCase();
+                    
+                    // Check Category
+                    const matchesCategory = activeCategory === 'all' || categories.includes(activeCategory);
+                    
+                    // Check Search Text
+                    const matchesSearch = title.includes(searchInputVal) || desc.includes(searchInputVal) || 
+                                        Array.from(card.querySelectorAll('.tech-tag')).some(t => t.textContent.toLowerCase().includes(searchInputVal));
+
+                    return matchesCategory && matchesSearch;
+                });
+
+                // Reset to Page 1 when filters change
+                currentPage = 1;
+                
+                // Update Stats & Render
+                updateStats();
+                renderPage();
+            }
+
+            // 2. Render Page Function
+            function renderPage() {
+                // First, hide ALL cards
+                allCards.forEach(card => card.style.display = 'none');
+
+                // Calculate start and end index
+                const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+                const endIndex = startIndex + ITEMS_PER_PAGE;
+                
+                // Get the specific cards for this page
+                const cardsToShow = currentFilteredCards.slice(startIndex, endIndex);
+
+                // Show them with animation
+                cardsToShow.forEach((card, index) => {
+                    card.style.display = 'block';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                        card.style.transition = 'all 0.4s ease';
+                    }, index * 50);
+                });
+
+                updatePaginationControls();
+            }
+
+            // 3. Update Buttons & Text
+            function updatePaginationControls() {
+                const totalPages = Math.ceil(currentFilteredCards.length / ITEMS_PER_PAGE) || 1;
+                
+                pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
+                
+                prevBtn.disabled = (currentPage === 1);
+                nextBtn.disabled = (currentPage === totalPages);
+            }
+
+            // 4. Update the Stats at the top
+            function updateStats() {
+                document.getElementById('experiment-count').textContent = currentFilteredCards.length;
+                
+                const activeCount = currentFilteredCards.filter(c => c.dataset.status === 'active').length;
+                document.getElementById('active-count').textContent = activeCount;
+            }
+
+            // EVENT LISTENERS FOR PAGINATION
+            document.querySelectorAll('.control-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.control-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    applyFilters();
+                });
+            });
+
+            document.getElementById('searchInput').addEventListener('input', () => {
+                applyFilters();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderPage();
+                    grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const totalPages = Math.ceil(currentFilteredCards.length / ITEMS_PER_PAGE);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderPage();
+                    grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+
+            // Initialize on Load
+            applyFilters();
+
+
+            // ==========================================
+            // EXISTING FUNCTIONALITY (Terminal, Demos)
+            // ==========================================
+            
+            // Terminal updates
+            const terminalContent = document.getElementById('terminalContent');
+            const blinkingLine = document.getElementById('blinkingLine');
+            const terminalLines = [
+                "> Compiling shaders...",
+                "> Initializing particle system",
+                "> Loading 3D models...",
+                "> Setting up audio context",
+                "> Ready for interaction",
+                "> Connecting to GPU...",
+                "> Loading AI model weights",
+                "> Optimizing render pipeline",
+                "> Cache warmed up"
+            ];
+            let lineIndex = 0;
+
+            function addTerminalLine(text) {
+                const line = document.createElement('p');
+                line.className = 'terminal-line';
+                line.innerHTML = `<span class="prompt">></span> ${text}`;
+                terminalContent.appendChild(line);
+                terminalContent.scrollTop = terminalContent.scrollHeight;
+                blinkingLine.remove();
+                terminalContent.appendChild(blinkingLine);
+            }
+
+            function updateTerminal() {
+                if (lineIndex < terminalLines.length) {
+                    addTerminalLine(terminalLines[lineIndex]);
+                    lineIndex++;
+                }
+            }
+            setInterval(updateTerminal, Math.random() * 2000 + 3000);
+
+            // Play Demo Button
+            const playDemoBtn = document.getElementById('playDemoBtn');
+            playDemoBtn.addEventListener('click', function() {
+                addTerminalLine("> Starting audio visualizer demo...");
+                playDemoBtn.innerHTML = '⏸ Processing Audio...';
+                playDemoBtn.disabled = true;
+                setTimeout(() => {
+                    addTerminalLine("> Audio analysis complete");
+                    addTerminalLine("> Visualizer initialized");
+                    playDemoBtn.innerHTML = '▶ Demo Running';
+                    playDemoBtn.style.background = 'linear-gradient(135deg, #ff5f56 0%, #ff2e2e 100%)';
+                    setTimeout(() => {
+                        playDemoBtn.innerHTML = '▶ Play Demo';
+                        playDemoBtn.disabled = false;
+                        playDemoBtn.style.background = ''; // Revert to css default
+                    }, 3000);
+                }, 1500);
+            });
+
+            // AI Demo
+            const runAiDemoBtn = document.getElementById('runAiDemoBtn');
+            const resultsHeader = document.getElementById('resultsHeader');
+            const resultsGrid = document.getElementById('resultsGrid');
+            const medicalQAQuestions = [
+                { question: "Which condition is characterized by inflammation of the meninges?", llamaAnswer: "Meningitis", llamaAnswerFull: "Meningitis is an inflammation of the protective membranes covering the brain and spinal cord.", correctAnswer: "Meningitis", correctAnswerFull: "Meningitis is the medical term for inflammation of the meninges.", correct: true },
+                { question: "What is the primary function of platelets in hemostasis?", llamaAnswer: "Blood clotting", llamaAnswerFull: "Platelets initiate blood clotting by aggregating at the site of injury.", correctAnswer: "Blood clotting", correctAnswerFull: "Platelets are essential for hemostasis by forming blood clots.", correct: true },
+                { question: "Which neurotransmitter is primarily associated with Parkinson's disease?", llamaAnswer: "Serotonin", llamaAnswerFull: "Serotonin deficiency is linked to Parkinson's symptoms.", correctAnswer: "Dopamine", correctAnswerFull: "Parkinson's disease is characterized by the degeneration of dopamine-producing neurons.", correct: false }
+            ];
+
+            runAiDemoBtn.addEventListener('click', function() {
+                resultsHeader.style.display = 'flex';
+                resultsGrid.innerHTML = '';
+                runAiDemoBtn.innerHTML = '<i class="fas fa-cog fa-spin"></i> Running Evaluation...';
+                runAiDemoBtn.disabled = true;
+                addTerminalLine("> Starting MedConceptsQA evaluation...");
+                
+                let correctCount = 0;
+                let currentQuestion = 0;
+
+                function processNextQuestion() {
+                    if (currentQuestion >= medicalQAQuestions.length) {
+                        const accuracy = (correctCount / medicalQAQuestions.length * 100).toFixed(2);
+                        document.getElementById('correctCount').textContent = correctCount;
+                        document.getElementById('incorrectCount').textContent = medicalQAQuestions.length - correctCount;
+                        document.getElementById('accuracyValue').textContent = accuracy;
+                        runAiDemoBtn.innerHTML = '<i class="fas fa-redo"></i> Run Evaluation Again';
+                        runAiDemoBtn.disabled = false;
+                        addTerminalLine(`> Accuracy: ${accuracy}%`);
+                        return;
+                    }
+                    
+                    const q = medicalQAQuestions[currentQuestion];
+                    const resultCard = document.createElement('div');
+                    resultCard.className = `result-card ${q.correct ? 'correct' : 'incorrect'}`;
+                    resultCard.innerHTML = `
+                        <div class="question-row"><div class="question-text">Q${currentQuestion + 1}: ${q.question}</div><span class="status-badge ${q.correct ? 'correct-badge' : 'incorrect-badge'}">${q.correct ? 'Correct' : 'Incorrect'}</span></div>
+                        <div class="answer-grid"><div class="answer-box"><h4>LLaMA Answer</h4><div class="answer-content"><strong>${q.llamaAnswer}</strong><p>${q.llamaAnswerFull}</p></div></div><div class="answer-box"><h4>Correct Answer</h4><div class="answer-content"><strong>${q.correctAnswer}</strong><p>${q.correctAnswerFull}</p></div></div></div>
+                    `;
+                    resultCard.style.opacity = '0';
+                    resultCard.style.transform = 'translateY(20px)';
+                    resultsGrid.appendChild(resultCard);
+                    
+                    setTimeout(() => {
+                        resultCard.style.opacity = '1';
+                        resultCard.style.transform = 'translateY(0)';
+                        resultCard.style.transition = 'all 0.5s ease';
+                    }, 10);
+                    
+                    if (q.correct) correctCount++;
+                    currentQuestion++;
+                    setTimeout(processNextQuestion, 800);
+                }
+                setTimeout(processNextQuestion, 1000);
+            });
+
+            // Uni Search Demo (Basic Implementation)
+            const uniSearchBtn = document.getElementById('uniSearchBtn');
+            const uniSearchInput = document.getElementById('uniSearchInput');
+            const searchResults = document.getElementById('searchResults');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const exampleButtons = document.querySelectorAll('.example-btn');
+
+            function performUniversitySearch(query) {
+                searchResults.style.display = 'block';
+                resultsContainer.innerHTML = '';
+                document.getElementById('searchPrompt').textContent = `Results for: "${query}"`;
+                uniSearchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+                
+                setTimeout(() => {
+                    document.getElementById('resultsCount').textContent = "3 results found";
+                    resultsContainer.innerHTML = `
+                        <div class="result-item" style="opacity: 0; transform: translateY(10px);">
+                            <span class="result-label">Admissions</span><span class="confidence">Confidence: 94%</span><br>
+                            <span class="result-title">Guide for ${query}</span><br>
+                            <a href="#" class="result-url">https://www.memphis.edu/iei/search?q=${encodeURIComponent(query)}</a>
+                        </div>
+                    `;
+                    setTimeout(() => {
+                        const item = resultsContainer.querySelector('.result-item');
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                        item.style.transition = 'all 0.3s ease';
+                    }, 100);
+                    uniSearchBtn.innerHTML = '<i class="fas fa-search"></i> Search';
+                }, 800);
+            }
+
+            uniSearchBtn.addEventListener('click', () => performUniversitySearch(uniSearchInput.value));
+            exampleButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    uniSearchInput.value = btn.dataset.query;
+                    performUniversitySearch(btn.dataset.query);
+                });
+            });
+
+            // Canvas Animation
+            const canvas = document.getElementById('experiment-canvas');
+            if (canvas.getContext) {
+                const ctx = canvas.getContext('2d');
+                canvas.width = 400;
+                canvas.height = 300;
+                let particles = [];
+                
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * canvas.width;
+                        this.y = Math.random() * canvas.height;
+                        this.size = Math.random() * 3 + 1;
+                        this.speedX = Math.random() * 2 - 1;
+                        this.speedY = Math.random() * 2 - 1;
+                        this.color = `hsl(${Math.random() * 60 + 140}, 100%, 50%)`;
+                    }
+                    update() {
+                        this.x += this.speedX;
+                        this.y += this.speedY;
+                        if (this.x > canvas.width) this.x = 0; else if (this.x < 0) this.x = canvas.width;
+                        if (this.y > canvas.height) this.y = 0; else if (this.y < 0) this.y = canvas.height;
+                    }
+                    draw() {
+                        ctx.fillStyle = this.color;
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+                
+                for(let i=0; i<30; i++) particles.push(new Particle());
+                
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    requestAnimationFrame(animate);
+                }
+                
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) animate();
+                }, { threshold: 0.1 });
+                observer.observe(document.querySelector('.featured-experiment'));
+            }
+        });
+    </script>
+</body>
+</html>
