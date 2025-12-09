@@ -213,14 +213,14 @@
                             <div class="contact-icon"><i>✉️</i></div>
                             <div>
                                 <h4>Email</h4>
-                                <p>jeremy@example.com</p>
+                                <p>jeremyflagg12@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon"><i>📍</i></div>
                             <div>
                                 <h4>Location</h4>
-                                <p>San Francisco, CA</p>
+                                <p>Memphis, TN</p>
                             </div>
                             <div id="mini-earth-container"></div>
                         </div>
@@ -396,7 +396,7 @@
             };
         
             try {
-                const response = await fetch("https://blahblah.execute-api.us-east-1.amazonaws.com/submit", {
+                const response = await fetch("https://akijzaomjk.execute-api.us-east-1.amazonaws.com/submit", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -547,24 +547,23 @@
         async function updateProjectCards() {
             try {
                 const res = await fetch("https://n6um49n4y1.execute-api.us-east-1.amazonaws.com/projects");
-                const projects = await res.json();
-        
-                // Select all existing project cards
+                let projects = await res.json(); // Note: Changed const to let
+    
+                // --- REORDER LOGIC HERE ---
+                projects.reverse(); 
+                // --------------------------
+    
                 const cards = document.querySelectorAll(".project-card");
-        
-                // Loop through cards and update only text fields
+    
                 projects.forEach((p, i) => {
-                    if (!cards[i]) return; // skip if mismatch
-        
-                    // Update title
+                    if (!cards[i]) return;
+    
                     const titleEl = cards[i].querySelector(".project-title");
                     if (titleEl) titleEl.textContent = p.title;
-        
-                    // Update description
+    
                     const descEl = cards[i].querySelector(".project-description");
                     if (descEl) descEl.textContent = p.description;
-        
-                    // Update tech list
+    
                     const techEl = cards[i].querySelector(".project-tech");
                     if (techEl && p.tech) {
                         techEl.innerHTML = p.tech
@@ -573,14 +572,14 @@
                             .join("");
                     }
                 });
-        
+    
             } catch (err) {
                 console.error("Failed to load project data:", err);
             }
         }
         
         updateProjectCards();
-        </script>
+    </script>
         
     <script>
         const canvas = document.getElementById('canvas-network');
